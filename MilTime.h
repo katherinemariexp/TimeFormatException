@@ -2,12 +2,32 @@
 #define MILTIME_H
 #include "Time.h"
 
+using namespace std;
+
 class MilTime : public Time
 {
 private:
 	int milHours;
     int milSeconds;
 public:
+	class BadSeconds
+	{
+	private:
+		int value;
+	public:
+		BadSeconds(int val) { value = val; }
+		int getValue() { return value; }
+	};
+	
+	class BadHour
+	{
+	private:
+		int value;
+	public:
+		BadHour(int val) { value = val; }
+		int getValue() { return value; }
+	};
+	
 	MilTime(int, int);
 
     void convert();
@@ -25,13 +45,13 @@ MilTime::MilTime(int h = 0, int s = 0) : Time(0, 0, s)
 {
 	if (h < 0 || h > 2359)
 	{
-		std::cout << "Hours must be in the range 0 - 2359.\n";
+		cout << "Hours must be in the range 0 - 2359.\n";
 		milHours = 0;
 		milSeconds = 0;
 	}
 	else if (s < 0 || s > 59)
 	{
-		std::cout << "Seconds must be in the range 0 - 59.\n";
+		cout << "Seconds must be in the range 0 - 59.\n";
 		milSeconds = 0;
 	}
 	else
@@ -66,9 +86,26 @@ void MilTime::convert()
 
 void MilTime::setTime(int h, int s)
 {
-	milHours = h;
-	milSeconds = s;
-	convert();
+//	milHours = h;
+//	milSeconds = s;
+//	convert();
+	
+	if (h > 0 && h <= 2359 )
+	{
+			milHours = h;
+			convert();
+	}
+	else
+		throw BadHour(h);
+
+	
+	if (s > 0 && s <= 59)
+	{
+		milSeconds = s;
+		convert();
+	}
+	else
+		throw BadSeconds(s);
 }
 
 #endif
