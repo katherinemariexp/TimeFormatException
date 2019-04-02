@@ -1,3 +1,12 @@
+// Description: Lab 7A - Time Format Exception
+// Author: Katherine-Marie Gonzales
+// COMSC200 - 5001
+// April 1, 2019
+// Status: Complete
+
+//Time.h
+
+
 #ifndef TIME_H
 #define TIME_H
 

@@ -1,3 +1,11 @@
+// Description: Lab 7A - Time Format Exception
+// Author: Katherine-Marie Gonzales
+// COMSC200 - 5001
+// April 1, 2019
+// Status: Complete
+
+//MilTime.cpp
+
 #include <iostream>
 #include "MilTime.h"
 
@@ -33,7 +41,6 @@ int main()
    }
 	  
 
-	
 	try
    {
    timeObj.setTime(2359, 59);
@@ -45,7 +52,6 @@ int main()
 	    << timeObj.getMin() << endl;
    cout << "The seconds are " 
 	    << timeObj.getSec() << endl;
-	    
    }
    catch (MilTime::BadSeconds e)
    {
@@ -59,9 +65,7 @@ int main()
    }
    
    //BadSeconds Exception
-   
-   
-   try
+    try
    {
    timeObj.setTime(2359, 60);
    cout << "The hour in military format is " 
@@ -86,8 +90,6 @@ int main()
    }
    
    //BadHour Exception 
-   
-   
    try
    {
    timeObj.setTime(2360, 59);

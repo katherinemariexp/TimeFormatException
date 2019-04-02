@@ -1,3 +1,12 @@
+// Description: Lab 7A - Time Format Exception
+// Author: Katherine-Marie Gonzales
+// COMSC200 - 5001
+// April 1, 2019
+// Status: Complete
+
+//MilTime.h
+
+
 #ifndef MILTIME_H
 #define MILTIME_H
 #include "Time.h"
